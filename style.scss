@@ -1,0 +1,520 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+$container: 1140px;
+$p: #555;
+@mixin table{
+    width: 70%;
+    margin-right: 30px;
+    border: 2px solid #ccc;  
+    border-collapse: collapse;
+    color: $p;            
+    td{
+        border-bottom: 1px solid #ddd;
+        padding: 7px;
+    }
+}
+
+body,
+button {
+    font-family: "Open Sans", sans-serif;
+    font-size: 1rem;
+    background-color: #eee;
+    h1,
+    h2,
+    h3 {
+        font-family: "Raleway", sans-serif;
+    }
+    h1 {
+        font-size: 2.4rem;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+    h3 {
+        font-size: 1.6rem;
+    }
+}
+
+ul {
+    list-style: none;
+}
+
+/*****HEADER*****/
+
+.header {
+    background-image: url(/ressources/images/header.jpg);
+    background-size: cover;
+    background-position: center;
+    background-color: #0c6588;
+    height: 280px;
+
+    /*OPTIONS*/
+    .header__options {
+        background-color: #e2f7ff;
+        width: $container;
+        display: flex;
+        justify-content: space-between;
+        margin: auto;
+    }
+    .header__options ul {
+        padding: 5px 50px;
+        display: flex;
+    }
+    .header__options li {
+        padding: 5px;
+        font-size: 1rem;
+    }
+    .header__options ul a {
+        color: #0c6588;
+        text-decoration: none;
+    }
+
+    /*SEARCH*/
+    .search {
+        margin: auto;
+        margin-top: 4em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #e2f7ff;
+    }
+    .search__logo {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+    .search__logo:before {
+        content: url(/ressources/images/logo2.svg);
+        position: absolute;
+        left: -42%;
+    }
+    .search-bar {
+        border: 2px solid white;
+        border-radius: 60px;
+        width: 25%;
+        height: 50px;
+        margin: 0 50px;
+        position: relative;
+        -webkit-border-radius: 60px;
+        -moz-border-radius: 60px;
+        -ms-border-radius: 60px;
+        -o-border-radius: 60px;
+    }
+    .search-bar fieldset {
+        border: none;
+        display: flex;
+        position: absolute;
+        top: 30%;
+        left: 8%;
+    }
+
+    .user{
+        display: flex;       
+    }
+    .user a {
+        text-decoration: none;
+        color: white;
+    }
+
+    /*SUPER MENU*/
+    .menu {
+        background-color: #e2f7ff;
+        width: $container;
+        margin: auto;
+        margin-top: 3.3em;
+
+        padding: 5px;
+        ul {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 50px;
+
+            span {
+                padding-right: 10px;
+                color: #0c6588;
+            }
+            a {
+                color: #0c6588;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+/*****MAIN*****/
+
+.container {
+    width: $container;
+    margin: auto;
+    height: 10000px;
+    background-color: #fff;
+    padding: 10px;
+
+    /*FIL D'ARIANE*/
+    .ariane ul {
+        display: flex;
+        margin-bottom: 70px;
+
+        li {
+            padding: 15px 10px;
+        }
+        span {
+            padding-right: 10px;
+        }
+        a {
+            color: #0c6588;
+        }
+    }
+
+    /*PRODUCT*/
+    .mini-menu {
+        display: flex;
+        margin: 40px 0 70px;
+        list-style: none;
+        li {
+            padding-right: 70px;
+        }
+        a {
+            color: #0c6588;
+        }
+    }
+
+    /*PRESENTATION*/
+    h2::after {
+        content: "";
+        height: 20px;
+        flex: 1;
+        margin-left: 1em;
+        background-image: radial-gradient(grey 3px, transparent 4px);
+        background-size: 20px 20px;
+    }
+
+    section {
+        display: flex;
+        margin-bottom: 100px;
+    }
+    section article {
+        width: 50%;
+    }
+
+    /*PHOTOS*/
+    .photos {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .photos > img {
+        width: 500px;
+    }
+    .photos__gallery {
+        img {
+            width: 50px;
+        }
+        p {
+            font-size: 0.8rem;
+            padding: 20px;
+            text-align: center;
+        }
+    }
+
+    /*BUY*/
+    .buy {
+        background-color: #eee;
+        margin: 8px 0 40px;
+        width: 100%;
+        height: 210px;
+        position: relative;
+    }
+    .brand {
+        text-align: left;
+    }
+    .brand::before {
+        content: url(/ressources/images/brand-1/logo-sm.png);
+        margin-right: 40px;
+        vertical-align: -20%;
+    }
+    .buy__price p:first-child {
+        font-size: 3rem;
+        line-height: 2em;
+        margin-left: 60px;
+    }
+    .buy__price p:nth-child(2) {
+        font-size: 1rem;
+        margin-left: 50px;
+    }
+    .buy__cart {
+        position: absolute;
+        right: 0;
+        top: 5%;
+        width: 250px;
+    }
+    .buy__cart button:first-child {
+        background-color: #1b5972;
+        border: none;
+        padding: 20px 30px;
+        width: 95%;
+        height: 70px;
+        color: white;
+        font-size: 1rem;
+    }
+    .buy__cart button:nth-child(2) {
+        background-color: #fff;
+        border: none;
+        width: 95%;
+        height: 60px;
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+    .buy__guarantee {
+        background-color: rgb(206, 202, 202);
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+    }
+    .description {
+        span {
+            font-weight: bold;
+            padding-right: 10px;
+            color: $p;
+        }
+        ul {
+            margin: 20px 0 0 15px;
+            text-align: left;
+        }
+    }
+
+    /*****DESCRIPTIF*****/
+    .descriptif {
+        margin-top: 80px;
+        img {
+            float: right;
+            border: 1px solid #eee;
+        }
+        h3 {
+            margin: 50px 0 20px;
+        }
+        p {
+            width: 50%;
+            color: $p;
+        }
+    }
+
+    /*****DESIGN*****/
+    .design {
+        margin-top: 250px;
+        img {
+            float: left;
+            border: 1px solid #eee;
+            padding: 30px;
+            width: 50%;
+            margin-right: 40px;
+        }
+        h3 {
+            margin-bottom: 20px;
+        }
+        p {
+            padding-bottom: 20px;
+            width: 100%;
+            color: $p;
+        }
+    }
+
+    /*****CONFORT*****/
+    .confort {
+        margin-top: 250px;
+        img {
+            float: right;
+            border: 1px solid #eee;
+            width: 50%;
+            margin-left: 40px;
+        }
+        h3 {
+            margin-bottom: 20px;
+        }
+        p {
+            padding-bottom: 20px;
+            width: 100%;
+            color: $p;
+        }
+    }
+
+    /*****CARACTERISTIQUES TECHNIQUES*****/
+    h2{
+        margin-top: 200px;
+    }
+
+    /*****AFFICHAGE*****/    
+    .affichage{        
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-between;     
+           
+        h3{
+           margin: 30% 20px 0;            
+        }
+        @include table;
+    }
+
+    /****ECRAN****/
+    .screen{
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-between;        
+           
+        table{
+            width: 70%;
+            margin-right: 30px;
+            border: 2px solid #ccc;  
+            border-collapse: collapse;
+            color: $p;            
+            td{
+                border-bottom: 1px solid #ddd;
+                padding: 7px;
+            }
+        }
+        h3{
+            margin: 10% 20px 0;            
+         }
+    }
+
+    /*****ERGONOMIE*****/
+    .ergonomie{
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-between;        
+           
+        table{
+            width: 70%;
+            margin-right: 30px;
+            border: 2px solid #ccc;  
+            border-collapse: collapse;
+            color: $p;            
+            td{
+                border-bottom: 1px solid #ddd;
+                padding: 7px;
+            }
+        }
+        h3{
+            margin: 10% 20px 0;            
+         }
+    }
+
+    /*****CONNECTIQUES*****/
+    .connect{
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-between;        
+           
+        table{
+            width: 70%;
+            margin-right: 30px;
+            border: 2px solid #ccc;  
+            border-collapse: collapse;
+            color: $p;            
+            td{
+                border-bottom: 1px solid #ddd;
+                padding: 7px;
+            }
+        }
+        h3{
+            margin: 5% 20px 0;            
+         }
+    }
+
+    /*****MULTIMEDIA*****/
+    .multimedia{
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-between;        
+           
+        table{
+            width: 70%;
+            margin-right: 30px;
+            border: 2px solid #ccc;  
+            border-collapse: collapse;
+            color: $p;            
+            td{
+                border-bottom: 1px solid #ddd;
+                padding: 7px;
+            }
+        }
+        h3{
+            margin: 5% 20px 0;            
+         }
+    }
+
+    /*****CARACTERISTIQUES PHYSIQUES*****/
+    .physics{
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-between;        
+           
+        table{
+            width: 70%;
+            margin-right: 30px;
+            border: 2px solid #ccc;  
+            border-collapse: collapse;
+            color: $p;            
+            td{
+                border-bottom: 1px solid #ddd;
+                padding: 7px;
+            }
+        }
+        h3{
+            margin: 10% 0 0 20px;            
+         }
+    }
+
+    /*****ALIMENTATION*****/
+    .alimentation{
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-between;        
+           
+        table{
+            width: 70%;
+            margin-right: 30px;
+            border: 2px solid #ccc;  
+            border-collapse: collapse;
+            color: $p;            
+            td{
+                border-bottom: 1px solid #ddd;
+                padding: 7px;
+            }
+        }
+        h3{
+            margin: 5% 20px 0;             
+         }
+    }
+
+    .menu {
+        background-color: #e2f7ff;
+        width: $container;
+        margin: auto;
+                           
+        
+        ul {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 50px;
+
+            span {
+                padding-right: 10px;
+                color: #0c6588;
+            }
+            a {
+                color: #0c6588;
+                text-decoration: none;
+            }
+        }
+    }
+
+}
+
+
